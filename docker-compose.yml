@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"  # Streamlit
+      - "8888:8888"  # JupyterLab
+    volumes:
+      - ./work:/home/jovyan/work
+    command: start.sh jupyter lab --NotebookApp.token='' --NotebookApp.password=''
